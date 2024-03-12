@@ -1,11 +1,12 @@
 ﻿using System;
+using WorldOfPain.Models.CharacterItems;
 
 namespace WorldOfPain.Models.Character
 {
     public class Hero : CharacterBase
     {
-        public Hero(string name, int health, int attackDamage, int defense, int x, int y)
-            : base(name, health, attackDamage, defense, x, y)
+        public Hero(string name, int health, int attackDamage, int defense, int x, int y, Bag bag)
+            : base(name, health, attackDamage, defense, x, y, bag)
         {
         }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WorldOfPain.Models.CharacterItems;
 
 namespace WorldOfPain.Models.Character
 {
@@ -14,8 +15,9 @@ namespace WorldOfPain.Models.Character
         public int Defense { get; set; }
         public int X { get; set; }
         public int Y { get; set; }
+        public Bag Bag { get; set; }
 
-        public CharacterBase(string name, int health, int attackDamage, int defense, int x, int y)
+        public CharacterBase(string name, int health, int attackDamage, int defense, int x, int y, Bag bag)
         {
             Name = name;
             Health = health;

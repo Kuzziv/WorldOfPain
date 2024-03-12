@@ -6,16 +6,15 @@ using System.Threading.Tasks;
 
 namespace WorldOfPain.Models.CharacterItems
 {
-    public class AttackItem
+    public class AttackItem : ItemBase
     {
-        public string Name { get; set; }
         public int Hit { get; set; }
 
         public int Range { get; set; }
 
         public AttackItem(string name, int hit, int range)
+            : base(name)
         {
-            Name = name;
             Hit = hit;
             Range = range;
         }

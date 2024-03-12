@@ -58,7 +58,7 @@ namespace WorldOfPain.Services
             }
 
             // Print player's health
-            Console.WriteLine($"Player Health: {world.Player.Health}");
+            Console.WriteLine($"{world.Player.Name}'s Health: {world.Player.Health}");
             // Print turn count
             Console.WriteLine($"Turn: {turnCount}");
         }

@@ -1,4 +1,5 @@
 ﻿using System;
+using WorldOfPain.Models.CharacterItems;
 
 namespace WorldOfPain.Models.Character
 {
@@ -7,8 +8,8 @@ namespace WorldOfPain.Models.Character
         private const int HuntingProximity = 3; // Define the proximity range for hunting
         private const int AttackRange = 1; // Define the attack range
 
-        public Creature(string name, int health, int attackDamage, int defense, int x, int y)
-            : base(name, health, attackDamage, defense, x, y)
+        public Creature(string name, int health, int attackDamage, int defense, int x, int y, Bag bag)
+            : base(name, health, attackDamage, defense, x, y, bag)
         {
         }
     
