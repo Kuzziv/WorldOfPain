@@ -26,11 +26,6 @@ namespace WorldOfPain.Models.Environment
             Creatures.Add(creature); // Add creature to the list of creatures
         }
 
-        public void AddPlayer(Hero player)
-        {
-            Player = player;
-        }
-
         public void AddObject(WorldObject worldObject)
         {
             Objects.Add(worldObject);

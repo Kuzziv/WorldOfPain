@@ -6,14 +6,17 @@ namespace WorldOfPain.Services
 {
     public class SaveManager
     {
-        private readonly string _saveFolder = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "YAMLStore", "Heros");
+        private readonly string _saveFolder = "C:\\Users\\hifnh\\Desktop\\Project\\WorldOfPain\\YAMLStore\\Heros\\";
 
         public void Save<T>(T obj, string fileName)
         {
-            string directoryPath = Path.Combine(_saveFolder);
-            Directory.CreateDirectory(directoryPath); // Create directory if it doesn't exist
+            // if the folder doesn't exist, create it
+            if (!Directory.Exists(_saveFolder))
+            {
+                Directory.CreateDirectory(_saveFolder);
+            }
 
-            string filePath = Path.Combine(_saveFolder, $"{fileName}.yaml");
+            string filePath = _saveFolder + $"{fileName}.yaml";
             var serializer = new SerializerBuilder().Build();
             var yaml = serializer.Serialize(obj);
             File.WriteAllText(filePath, yaml);

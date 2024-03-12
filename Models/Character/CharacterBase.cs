@@ -9,6 +9,11 @@ namespace WorldOfPain.Models.Character
 {
     public abstract class CharacterBase
     {
+        protected CharacterBase()
+        {
+            
+        }
+
         public string Name { get; set; }
         public int Health { get; set; }
         public int AttackDamage { get; set; }

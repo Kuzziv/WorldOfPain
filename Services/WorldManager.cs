@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WorldOfPain.Models;
+using WorldOfPain.Models.Character;
 using WorldOfPain.Models.Environment;
 
 namespace WorldOfPain.Services
@@ -19,6 +20,10 @@ namespace WorldOfPain.Services
             _world = world;
         }
 
+        public void AddHero(Hero hero)
+        {
+            _world.Player = hero;
+        }
 
         public void CreateWorld()
         {
@@ -154,6 +159,8 @@ namespace WorldOfPain.Services
                 Console.WriteLine("Game Over! Player has been defeated.");
             }
         }
+
+       
 
 
 
