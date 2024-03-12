@@ -12,13 +12,11 @@ namespace WorldOfPain.Services
         {
             string directoryPath = Path.Combine(_saveFolder);
             Directory.CreateDirectory(directoryPath); // Create directory if it doesn't exist
-            Console.WriteLine(directoryPath);
-            Console.ReadLine();
 
-            //string filePath = Path.Combine(_saveFolder, $"{fileName}.yaml");
-            //var serializer = new SerializerBuilder().Build();
-            //var yaml = serializer.Serialize(obj);
-            //File.WriteAllText(filePath, yaml);
+            string filePath = Path.Combine(_saveFolder, $"{fileName}.yaml");
+            var serializer = new SerializerBuilder().Build();
+            var yaml = serializer.Serialize(obj);
+            File.WriteAllText(filePath, yaml);
         }
 
         public T Load<T>(string fileName)
