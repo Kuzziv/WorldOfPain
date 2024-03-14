@@ -1,4 +1,5 @@
 ﻿using System;
+using WorldOfPain.Interfaces;
 using WorldOfPain.Models.Character;
 using WorldOfPain.Models.CharacterItems;
 using WorldOfPain.Models.Environment;
@@ -8,7 +9,7 @@ namespace WorldOfPain.Services
     public class GameManager
     {
         private WorldManager _worldManager;
-        private SaveManager _saveManager = new SaveManager();
+        private SaveManager _saveManagerHeros = new SaveManager("Heros");
         private Hero _hero;
 
         public GameManager(World world)
@@ -44,7 +45,7 @@ namespace WorldOfPain.Services
             newHero.Y = 0;
             newHero.Bag = startingBag;
             _hero = newHero;
-            _saveManager.Save<Hero>(_hero, _hero.Name);
+            _saveManagerHeros.Save<Hero>(_hero, _hero.Name);
             _worldManager.AddHero(_hero);
             
         }
