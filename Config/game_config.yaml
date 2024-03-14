@@ -1,0 +1,15 @@
+WorldSettings:
+  MaxX: 10
+  MaxY: 10
+
+PlayerSettings:
+  Name: "Hero"
+  Health: 100
+  AttackDamage: 10
+  Defense: 5
+  StartingX: 0
+  StartingY: 0
+  MaxBagSlots: 4
+
+CreatureSettings:
+  InitialCreatureCount: 3

@@ -9,22 +9,36 @@ using WorldOfPain.Models.Environment;
 
 namespace WorldOfPain.Services
 {
+    /// <summary>
+    /// Manages the game world, including player actions, creature behavior, and game state.
+    /// </summary>
     public class WorldManager
     {
         private bool _isGameOver = false;
         private World _world;
         private int _worldTurnCount = 0;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WorldManager"/> class with the specified world.
+        /// </summary>
+        /// <param name="world">The game world.</param>
         public WorldManager(World world)
         {
             _world = world;
         }
 
+        /// <summary>
+        /// Adds the hero to the game world.
+        /// </summary>
+        /// <param name="hero">The hero character.</param>
         public void AddHero(Hero hero)
         {
             _world.Player = hero;
         }
 
+        /// <summary>
+        /// Creates the game world and starts the game.
+        /// </summary>
         public void CreateWorld()
         {
             Console.Clear(); // Clear console before starting the game
@@ -32,8 +46,10 @@ namespace WorldOfPain.Services
             PrintGameMap(); // Print initial game map
         }
 
-
-        public void UpdateWorld() 
+        /// <summary>
+        /// Updates the game world for the current turn.
+        /// </summary>
+        public void UpdateWorld()
         {
             PlayerTurn();
             PrintGameMap(); // Print game map after player's turn
@@ -49,6 +65,9 @@ namespace WorldOfPain.Services
             _worldTurnCount++;
         }
 
+        /// <summary>
+        /// Runs the game loop until the game is over.
+        /// </summary>
         public void runGame()
         {
             CreateWorld();
@@ -59,6 +78,9 @@ namespace WorldOfPain.Services
             }
         }
 
+        /// <summary>
+        /// Prints the current game map to the console.
+        /// </summary>
         private void PrintGameMap()
         {
             Console.Clear(); // Clear console before printing new map
@@ -83,6 +105,9 @@ namespace WorldOfPain.Services
             Console.WriteLine($"This world turn count: {_worldTurnCount}");
         }
 
+        /// <summary>
+        /// Allows the player to take actions during their turn.
+        /// </summary>
         private void PlayerTurn()
         {
             // Allow the player to take actions during their turn
@@ -125,19 +150,21 @@ namespace WorldOfPain.Services
             }
         }
 
+        /// <summary>
+        /// Checks if a move to the specified position is valid.
+        /// </summary>
+        /// <param name="x">The X-coordinate of the position.</param>
+        /// <param name="y">The Y-coordinate of the position.</param>
+        /// <returns>True if the move is valid, otherwise false.</returns>
         private bool IsValidMove(int x, int y)
         {
             // Check if the new position is within the bounds of the world
             return x >= 0 && x < _world.MaxX && y >= 0 && y < _world.MaxY;
         }
 
-
-        private bool IsValidPosition(int x, int y)
-        {
-            // Check if the new position is within the bounds of the world
-            return x >= 0 && x < _world.MaxX && y >= 0 && y < _world.MaxY;
-        }
-
+        /// <summary>
+        /// Performs actions for creatures during their turn.
+        /// </summary>
         private void CreaturesTurn()
         {
             // Allow creatures to take their actions during their turn
@@ -149,6 +176,9 @@ namespace WorldOfPain.Services
             }
         }
 
+        /// <summary>
+        /// Checks for game over conditions and ends the game if necessary.
+        /// </summary>
         private void CheckGameOver()
         {
             // Check for conditions that lead to game over
@@ -159,16 +189,5 @@ namespace WorldOfPain.Services
                 Console.WriteLine("Game Over! Player has been defeated.");
             }
         }
-
-       
-
-
-
-
-
-
-
-
-
     }
 }

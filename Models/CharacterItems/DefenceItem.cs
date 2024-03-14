@@ -1,25 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WorldOfPain.Models.CharacterItems
 {
+    /// <summary>
+    /// Represents a defense item that reduces hit points or damage received by characters, derived from the <see cref="ItemBase"/> class.
+    /// </summary>
     public class DefenceItem : ItemBase
     {
-        public int ReduceHitPoit { get; set; }
+        /// <summary>
+        /// Gets or sets the amount by which the defense item reduces hit points or damage received.
+        /// </summary>
+        public int ReduceHitPoint { get; set; }
 
-        public DefenceItem(string name, int reduceHitPoit)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="DefenceItem"/> class with specified parameters.
+        /// </summary>
+        /// <param name="name">The name of the defense item.</param>
+        /// <param name="reduceHitPoint">The amount by which the defense item reduces hit points or damage received.</param>
+        public DefenceItem(string name, int reduceHitPoint)
             : base(name)
         {
-            ReduceHitPoit = reduceHitPoit;
+            ReduceHitPoint = reduceHitPoint;
         }
-
-
-
-
-
-
     }
 }
