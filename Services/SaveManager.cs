@@ -29,17 +29,17 @@ namespace WorldOfPain.Services
 
         public void Save<T>(T obj, string fileName)
         {
+
             // if the folder doesn't exist, create it
-            //if (!Directory.Exists(_saveFolder))
-            //{
-            //    Directory.CreateDirectory(_saveFolder);
-            //}
+            if (!Directory.Exists(_saveFolder))
+            {
+                Directory.CreateDirectory(_saveFolder);
+            }
 
-
-            //string filePath = _saveFolder + $"{fileName}.yaml";
-            //var serializer = new SerializerBuilder().Build();
-            //var yaml = serializer.Serialize(obj);
-            //File.WriteAllText(filePath, yaml);
+            string filePath = _saveFolder + "\\" + $"{fileName}.yaml";
+            var serializer = new SerializerBuilder().Build();
+            var yaml = serializer.Serialize(obj);
+            File.WriteAllText(filePath, yaml);
         }
 
         public T Load<T>(string fileName)
