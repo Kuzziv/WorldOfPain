@@ -35,5 +35,3 @@ Here are some tasks to enhance WorldOfPain:
 
 Feel free to contribute and add more features to enhance the game!
 
-```
-
