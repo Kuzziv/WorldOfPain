@@ -11,7 +11,7 @@ namespace WorldOfPain.Models.CharacterItems
     {
         public List<ItemBase> Items { get; set; }
         public int MaxSlots { get; set; }
-        public int CurrentSlots { get { return Items.Count; } }
+        public int CurrentSlotsOccupied { get { return Items.Count; } }
 
         public Bag(string name, int maxSlots)
             : base(name)

@@ -6,7 +6,7 @@ namespace WorldOfPain.Services
 {
     public class SaveManager
     {
-        private readonly string _saveFolder = "C:\\Users\\hifnh\\Desktop\\Project\\WorldOfPain\\YAMLStore\\Heros\\";
+        private readonly string _saveFolder = "C:\\Users\\hifnh\\Desktop\\Project\\TheGame\\GameStorage\\";
 
         public void Save<T>(T obj, string fileName)
         {
