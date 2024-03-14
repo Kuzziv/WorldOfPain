@@ -14,4 +14,10 @@
     <Folder Include="YAMLStore\Heros\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="YamlDotNet">
+      <HintPath>..\..\..\.nuget\packages\yamldotnet\15.1.2\lib\net8.0\YamlDotNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
