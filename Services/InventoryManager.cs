@@ -9,7 +9,7 @@ namespace WorldOfPain.Services
     {
         public void AddItemToBag(Hero hero, ItemBase item)
         {
-            if (hero.Bag.CurrentSlots >= hero.Bag.MaxSlots)
+            if (hero.Bag.CurrentSlotsOccupied >= hero.Bag.MaxSlots)
             {
                 throw new Exception("Bag is full");
             }
