@@ -3,7 +3,8 @@
 # WorldOfPain
 
 ## Description
-WorldOfPain is a text-based adventure game where players navigate through a virtual world, encountering challenges and battling monsters.
+WorldOfPain is a text-based adventure game where players navigate through a virtual world, 
+encountering challenges and battling monsters.
 
 ## Installation
 To install WorldOfPain and its dependencies, follow these steps:
